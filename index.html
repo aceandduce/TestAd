@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Wallet Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    /* Scrolling News Ticker */
+    .ticker-container {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #222;
+      color: #fff;
+      overflow: hidden;
+      white-space: nowrap;
+      z-index: 1000;
+    }
+
+    .ticker-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .content-wrapper {
+      margin-top: 40px; /* space for ticker */
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .image-container {
+      flex: 0 0 auto;
+      margin-left: auto;
+    }
+
+    .wallet-image {
+      width: 200px;
+      aspect-ratio: 1.59 / 1;
+      object-fit: cover;
+      border: 2px solid #ccc;
+    }
+
+    .text-content {
+      flex: 1 1 100%;
+      margin-top: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.8em;
+      padding: 10px;
+      background-color: #f0f0f0;
+      margin-top: 40px;
+    }
+
+    @media (min-width: 600px) {
+      .text-content {
+        flex: 1 1 60%;
+        margin-top: 0;
+      }
+
+      .image-container {
+        margin-left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- News Ticker -->
+  <div class="ticker-container">
+    <div class="ticker-text">
+      🚨 Breaking News: Responsive HTML templates are easier than ever! | Don’t forget to check out the footer below! |
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content-wrapper">
+    <div class="text-content">
+      <h1>Welcome to My Responsive Site</h1>
+      <p>This layout adjusts seamlessly between mobile and desktop views. The image to the right maintains a wallet photo aspect ratio.</p>
+      <p>Using flexbox and modern CSS features like <code>aspect-ratio</code>, we can easily control layout and responsiveness without needing a framework.</p>
+      <p>The news ticker above is a simple scrolling overlay that stays fixed at the top.</p>
+    </div>
+
+    <div class="image-container">
+      <img src="https://via.placeholder.com/318x200" alt="Wallet Photo" class="wallet-image">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    &copy; 2025 My Responsive Site
+  </div>
+
+</body>
+</html>
